@@ -1,12 +1,7 @@
 const path = require('path')
-const webpack = require('webpack')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 
-const config = (env, argv) => {
-  const backend_url = argv.mode === 'production'
-    ? 'https://puhluettelopart3.fly.dev/api/persons'
-    : 'http://localhost:3001/api/persons'
-
+const config = () => {
   return {
     entry: './src/index.js',
     output: {
@@ -16,7 +11,7 @@ const config = (env, argv) => {
     devServer: {
       static: path.resolve(__dirname, 'build'),
       compress: true,
-      port: 3000
+      port: 3001
     },
     devtool: 'source-map',
     module: {
@@ -35,12 +30,9 @@ const config = (env, argv) => {
       ]
     },
     plugins: [
-      new webpack.DefinePlugin({
-        BACKEND_URL: JSON.stringify(backend_url)
-      }),
       new HtmlWebPackPlugin({
-        template: "./public/index.html",
-        filename: "./index.html",
+        template: './public/index.html',
+        filename: './index.html',
       }),
     ]
   }
