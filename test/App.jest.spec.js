@@ -12,17 +12,17 @@ describe('<App />', () => {
     axiosMock.get.mockResolvedValueOnce(
       {
         data: [
-            { 
-              'name': 'Arto Hellas',
-              'number': '040-0400400',
-              'id': 1       
-            },
-            { 
-              'name': 'Ada Lovelace',
-              'number': '39-44-5323523',
-              'id': 2       
-            }
-          ]
+          {
+            'name': 'Arto Hellas',
+            'number': '040-0400400',
+            'id': 1
+          },
+          {
+            'name': 'Ada Lovelace',
+            'number': '39-44-5323523',
+            'id': 2
+          }
+        ]
       }
     )
   })
@@ -32,9 +32,9 @@ describe('<App />', () => {
       render(<App/>)
     })
     expect(axiosMock.get).toHaveBeenCalledTimes(1)
-    expect(axiosMock.get).toHaveBeenCalledWith('api/persons')  
+    expect(axiosMock.get).toHaveBeenCalledWith('api/persons')
   })
-  
+
   it('renders data', async () => {
     await act(async () => {
       render(<App/>)
@@ -46,6 +46,6 @@ describe('<App />', () => {
     expect(artoPerson).toBeDefined()
     expect(artoNumber).toBeDefined()
     expect(adaPerson).toBeDefined()
-    expect(adaNumber).toBeDefined() 
+    expect(adaNumber).toBeDefined()
   })
 })
