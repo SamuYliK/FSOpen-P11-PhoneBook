@@ -1,5 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
+const HtmlWebPackPlugin = require('html-webpack-plugin')
 
 const config = (env, argv) => {
   const backend_url = argv.mode === 'production'
@@ -36,7 +37,11 @@ const config = (env, argv) => {
     plugins: [
       new webpack.DefinePlugin({
         BACKEND_URL: JSON.stringify(backend_url)
-      })
+      }),
+      new HtmlWebPackPlugin({
+        template: "./public/index.html",
+        filename: "./index.html",
+      }),
     ]
   }
 }
