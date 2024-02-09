@@ -16,10 +16,26 @@ const Filter = ({ value, handleFilter }) => {
 const PersonForm = ({ nameValue, handleNameChange, numberValue, handleNumberChange, handleClick,text }) => {
   return (
     <form>
-      <div>name: <input value={nameValue} onChange={handleNameChange}/></div>
-      <div>number: <input value={numberValue} onChange={handleNumberChange}/></div>
       <div>
-        <button onClick={handleClick}>{text}</button>
+        name:
+        <input
+          id='name'
+          value={nameValue}
+          onChange={handleNameChange}
+        />
+      </div>
+      <div>
+        number:
+        <input
+          id='number'
+          value={numberValue}
+          onChange={handleNumberChange}
+        />
+      </div>
+      <div>
+        <button id='add-person-button' onClick={handleClick}>
+          {text}
+        </button>
       </div>
     </form>
   )
