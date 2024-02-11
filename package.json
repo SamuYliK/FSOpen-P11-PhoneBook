@@ -10,7 +10,6 @@
     "cypress:open": "cypress open",
     "test:e2e": "cypress run",
     "build": "webpack --mode=production",
-    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push",
     "lint": "eslint ."
   },
   "author": "Samu YliK",

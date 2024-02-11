@@ -9,6 +9,11 @@ app.use(express.json())
 
 app.use('/', personsRouter)
 
+// Check that new version is deployed
+app.get('/version', (req, res) => {
+  res.send('Release V9') // Change
+})
+
 const unknownEndpoint = (request, response) => {
   response.status(404).send({ error: 'unknown endpoint' })
 }
