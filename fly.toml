@@ -19,6 +19,16 @@ app = "puhluettelopart3"
   min_machines_running = 0
   processes = ["app"]
 
+[deploy]
+  strategy = "bluegreen"
+
+[[http_service.checks]]
+  grace_period = "8s"
+  interval = "20s"
+  method = "GET"
+  timeout = "4s"
+  path = "/health"
+
 [[vm]]
   cpu_kind = "shared"
   cpus = 1

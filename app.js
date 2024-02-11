@@ -11,7 +11,13 @@ app.use('/', personsRouter)
 
 // Check that new version is deployed
 app.get('/version', (req, res) => {
-  res.send('Release V9') // Change
+  res.send('Release V10 - Fail') // Change
+})
+
+app.get('/health', (req, res) => {
+  // eslint-disable-next-line no-constant-condition
+  if (true) throw('error...  ')
+  res.send('ok')
 })
 
 const unknownEndpoint = (request, response) => {
