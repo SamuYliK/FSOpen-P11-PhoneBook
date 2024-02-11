@@ -5,3 +5,7 @@ Part 11 of FS Open, Exercises 11.20 - 11.21
 ## This app is on the internet deployed with Fly.io:
 
 https://puhluettelopart3.fly.dev/
+
+## Link to other repository of part 11
+
+https://github.com/SamuYliK/full-stack-open-pokedex.git

@@ -11,12 +11,10 @@ app.use('/', personsRouter)
 
 // Check that new version is deployed
 app.get('/version', (req, res) => {
-  res.send('Release V10 - Fail') // Change
+  res.send('Release V11') // Change
 })
 
 app.get('/health', (req, res) => {
-  // eslint-disable-next-line no-constant-condition
-  if (true) throw('error...  ')
   res.send('ok')
 })
 
