@@ -11,7 +11,7 @@ app.use('/', personsRouter)
 
 // Check that new version is deployed
 app.get('/version', (req, res) => {
-  res.send('Release V12') // Change
+  res.send('Release V13') // Change
 })
 
 app.get('/health', (req, res) => {
